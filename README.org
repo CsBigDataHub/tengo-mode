@@ -2,23 +2,21 @@
 #+LANGUAGE: en
 #+OPTIONS: toc:nil num:nil
 
-* tengo-mode.el
-
 A major mode for editing [[https://github.com/d5/tengo][Tengo]] script files in GNU Emacs.
 
 Tengo is a small, dynamic, fast, secure scripting language for Go. This package provides syntax highlighting, indentation, and navigation support for Tengo source files (=.tengo=).
 
 * Features
 
-- **Syntax Highlighting**: Comprehensive highlighting for keywords, built-ins, constants, operators, strings, and comments.
-- **Context-Aware Indentation**:
+- *Syntax Highlighting*: Comprehensive highlighting for keywords, built-ins, constants, operators, strings, and comments.
+- *Context-Aware Indentation*:
   - Smart indentation for braces ~{}~, parentheses ~()~, and brackets ~[]~.
   - *Robust Logic*: Correctly ignores braces found inside strings or comments (e.g., ~x := "{"~ will not trigger indentation).
-- **Navigation**:
+- *Navigation*:
   - Support for ~beginning-of-defun~ (~C-M-a~) and ~end-of-defun~ (~C-M-e~).
   - Works with named functions (~func foo()~) and variable-assigned anonymous functions (~foo := func()~).
-- **Imenu Support**: Indexing for top-level functions and variable declarations for quick navigation.
-- **Electric Support**: Integration with ~electric-indent-mode~.
+- *Imenu Support*: Indexing for top-level functions and variable declarations for quick navigation.
+- *Electric Support*: Integration with ~electric-indent-mode~.
 
 * Installation
 
