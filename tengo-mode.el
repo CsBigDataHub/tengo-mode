@@ -5,7 +5,7 @@
 ;; Author: Chetan Koneru
 ;; URL: https://github.com/yourusername/tengo-mode
 ;; Version: 0.1.0
-;; Package-Requires: ((emacs "24.3"))
+;; Package-Requires: ((emacs "24.4"))
 ;; Keywords: languages, tengo
 ;; License: GPL-3.0-or-later
 
@@ -105,12 +105,13 @@
   '("true" "false" "undefined")
   "Constants in Tengo.")
 
-;; Fallback for older Emacs
-(unless (facep 'font-lock-operator-face)
-  (defface font-lock-operator-face
-    '((t :inherit font-lock-builtin-face))
-    "Face for operators."
-    :group 'font-lock-faces))
+;; Compatibility for older Emacs versions
+;; Determines the correct face to use for operators safely
+(defvar tengo-operator-face
+  (if (facep 'font-lock-operator-face)
+      'font-lock-operator-face
+    'font-lock-builtin-face)
+  "Face used for Tengo operators.")
 
 ;;; Font Lock
 
@@ -147,7 +148,7 @@
             "+=" "-=" "*=" "/=" "%=" "&=" "|=" "^=" "<<=" ">>=" "&^="
             "<<" ">>" "&^" "+" "-" "*" "/" "%" "&" "|" "^" "!" "<" ">" "=")
           t)
-         'font-lock-operator-face))
+         tengo-operator-face))
   "Font lock keywords for Tengo mode.")
 
 ;;; Indentation (Context-Aware)
