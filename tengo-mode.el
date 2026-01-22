@@ -3,7 +3,7 @@
 ;; Copyright (C) 2026 Chetan Koneru
 
 ;; Author: Chetan Koneru
-;; URL: https://github.com/yourusername/tengo-mode
+;; URL: https://github.com/CsBigDataHub/tengo-mode
 ;; Version: 0.1.0
 ;; Package-Requires: ((emacs "24.4"))
 ;; Keywords: languages, tengo
