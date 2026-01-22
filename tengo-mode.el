@@ -191,7 +191,8 @@ Ignores braces/parens/brackets inside strings and comments."
 
 (defun tengo-beginning-of-defun (&optional arg)
   "Move backward to the beginning of a Tengo function.
-Handles top-level, named, nested, and anonymous functions."
+Handles top-level, named, nested, and anonymous functions.
+With ARG, do it that many times."
   (interactive "^p")
   (unless arg (setq arg 1))
   (let ((found 0))
@@ -200,7 +201,8 @@ Handles top-level, named, nested, and anonymous functions."
     (= found arg)))
 
 (defun tengo-end-of-defun (&optional arg)
-  "Move forward to the end of a Tengo function."
+  "Move forward to the end of a Tengo function.
+With ARG, do it that many times."
   (interactive "^p")
   (unless arg (setq arg 1))
   (dotimes (_ arg)
