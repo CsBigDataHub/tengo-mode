@@ -1,11 +1,13 @@
 ;;; tengo-mode.el --- Major mode for the Tengo programming language -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2025
-;; Author: Your Name <your.email@example.com>
+;; Copyright (C) 2026 Chetan Koneru
+
+;; Author: Chetan Koneru
 ;; URL: https://github.com/yourusername/tengo-mode
-;; Version: 0.2.5
+;; Version: 0.1.0
 ;; Package-Requires: ((emacs "24.3"))
 ;; Keywords: languages, tengo
+;; License: GPL-3.0-or-later
 
 ;; This file is not part of GNU Emacs.
 
@@ -23,6 +25,21 @@
 ;; - Defun navigation (works for top-level, named, and nested/anonymous functions)
 ;;
 ;; Based on https://github.com/geseq/tengo-vim and official Tengo docs.
+;;
+;;; License:
+;;
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation; either version 3, or (at your option)
+;; any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Code:
 

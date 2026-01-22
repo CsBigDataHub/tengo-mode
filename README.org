@@ -1,0 +1,76 @@
+#+TITLE: tengo-mode.el
+#+LANGUAGE: en
+#+OPTIONS: toc:nil num:nil
+
+* tengo-mode.el
+
+A major mode for editing [[https://github.com/d5/tengo][Tengo]] script files in GNU Emacs.
+
+Tengo is a small, dynamic, fast, secure scripting language for Go. This package provides syntax highlighting, indentation, and navigation support for Tengo source files (=.tengo=).
+
+* Features
+
+- **Syntax Highlighting**: Comprehensive highlighting for keywords, built-ins, constants, operators, strings, and comments.
+- **Context-Aware Indentation**:
+  - Smart indentation for braces ~{}~, parentheses ~()~, and brackets ~[]~.
+  - *Robust Logic*: Correctly ignores braces found inside strings or comments (e.g., ~x := "{"~ will not trigger indentation).
+- **Navigation**:
+  - Support for ~beginning-of-defun~ (~C-M-a~) and ~end-of-defun~ (~C-M-e~).
+  - Works with named functions (~func foo()~) and variable-assigned anonymous functions (~foo := func()~).
+- **Imenu Support**: Indexing for top-level functions and variable declarations for quick navigation.
+- **Electric Support**: Integration with ~electric-indent-mode~.
+
+* Installation
+
+** Manual Installation
+
+1. Download ~tengo-mode.el~ to a directory in your ~load-path~ (e.g., =~/.emacs.d/lisp/=).
+2. Add the following to your Emacs configuration (~.emacs~ or ~init.el~):
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+(require 'tengo-mode)
+#+END_SRC
+
+** Using use-package
+
+If you have the file saved locally:
+
+#+BEGIN_SRC emacs-lisp
+(use-package tengo-mode
+  :load-path "~/.emacs.d/lisp/"
+  :mode "\\.tengo\\'")
+#+END_SRC
+
+* Configuration
+
+** Indentation Width
+
+The default indentation is *4 spaces*. You can change this by setting ~tengo-indent-offset~:
+
+#+BEGIN_SRC emacs-lisp
+(setq tengo-indent-offset 2) ; Set indentation to 2 spaces
+#+END_SRC
+
+** Electric Pairs
+
+To automatically close brackets and braces, it is recommended to enable ~electric-pair-mode~ globally or specifically for Tengo:
+
+#+BEGIN_SRC emacs-lisp
+(add-hook 'tengo-mode-hook 'electric-pair-mode)
+#+END_SRC
+
+* Keybindings
+
+~tengo-mode~ inherits from ~prog-mode~, so standard Emacs movement keys apply.
+
+| Keybinding | Command            | Description                                    |
+|------------+--------------------+------------------------------------------------|
+| ~TAB~        | ~tengo-indent-line~  | Indent the current line contextually.          |
+| ~C-M-a~      | ~beginning-of-defun~ | Move to the beginning of the current function. |
+| ~C-M-e~      | ~end-of-defun~       | Move to the end of the current function.       |
+| ~M-g i~      | ~imenu~              | Jump to a function or variable definition.     |
+
+* Credits
+
+Based on the [[https://github.com/geseq/tengo-vim][tengo-vim]] plugin and the official Tengo language documentation.
