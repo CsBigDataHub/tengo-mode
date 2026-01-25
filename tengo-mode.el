@@ -2,12 +2,11 @@
 
 ;; Copyright (C) 2026 Chetan Koneru
 
-;; Author: Chetan Koneru
+;; Author: Chetan Koneru <hadoopchetan@gmail.com>
 ;; URL: https://github.com/CsBigDataHub/tengo-mode
 ;; Version: 0.1.0
 ;; Package-Requires: ((emacs "24.4"))
 ;; Keywords: languages, tengo
-;; License: GPL-3.0-or-later
 
 ;; This file is not part of GNU Emacs.
 
