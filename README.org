@@ -2,6 +2,8 @@
 #+LANGUAGE: en
 #+OPTIONS: toc:nil num:nil
 
+[[https://melpa.org/#/tengo-mode][file:https://melpa.org/packages/tengo-mode-badge.svg]]
+
 A major mode for editing [[https://github.com/d5/tengo][Tengo]] script files in GNU Emacs.
 
 Tengo is a small, dynamic, fast, secure scripting language for Go. This package provides syntax highlighting, indentation, and navigation support for Tengo source files (=.tengo=).
@@ -26,8 +28,8 @@ Tengo is a small, dynamic, fast, secure scripting language for Go. This package 
 2. Add the following to your Emacs configuration (~.emacs~ or ~init.el~):
 
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/.emacs.d/lisp/")
-(require 'tengo-mode)
+  (add-to-list 'load-path "~/.emacs.d/lisp/")
+  (require 'tengo-mode)
 #+END_SRC
 
 ** Using use-package
@@ -35,10 +37,18 @@ Tengo is a small, dynamic, fast, secure scripting language for Go. This package 
 If you have the file saved locally:
 
 #+BEGIN_SRC emacs-lisp
-(use-package tengo-mode
-  :load-path "~/.emacs.d/lisp/"
-  :mode "\\.tengo\\'")
+  (use-package tengo-mode
+    :load-path "~/.emacs.d/lisp/"
+    :mode "\\.tengo\\'")
 #+END_SRC
+
+** From MELPA
+
+#+begin_src emacs-lisp
+  (use-package tengo-mode
+    :ensure t
+    :mode "\\.tengo\\'")
+#+end_src
 
 * Configuration
 
@@ -47,7 +57,7 @@ If you have the file saved locally:
 The default indentation is *4 spaces*. You can change this by setting ~tengo-indent-offset~:
 
 #+BEGIN_SRC emacs-lisp
-(setq tengo-indent-offset 2) ; Set indentation to 2 spaces
+  (setq tengo-indent-offset 2) ; Set indentation to 2 spaces
 #+END_SRC
 
 ** Electric Pairs
@@ -55,7 +65,7 @@ The default indentation is *4 spaces*. You can change this by setting ~tengo-ind
 To automatically close brackets and braces, it is recommended to enable ~electric-pair-mode~ globally or specifically for Tengo:
 
 #+BEGIN_SRC emacs-lisp
-(add-hook 'tengo-mode-hook 'electric-pair-mode)
+  (add-hook 'tengo-mode-hook 'electric-pair-mode)
 #+END_SRC
 
 * Keybindings
